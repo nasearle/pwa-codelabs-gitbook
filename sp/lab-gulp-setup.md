@@ -8,19 +8,19 @@
 
 
 
-<a href="#overview"><strong>Overview</strong></a><strong>  </strong>
+<a href="#overview"><strong>Overview</strong></a> 
 
-<a href="#1"><strong>1. Get set up</strong></a><strong>  </strong>
+<a href="#1"><strong>1. Get set up</strong></a> 
 
-<a href="#2"><strong>2. Install global tools</strong></a><strong>  </strong>
+<a href="#2"><strong>2. Install global tools</strong></a> 
 
-<a href="#3"><strong>3. Prepare the project</strong></a><strong>  </strong>
+<a href="#3"><strong>3. Prepare the project</strong></a> 
 
-<a href="#4"><strong>4. Minify JavaScript</strong></a><strong>  </strong>
+<a href="#4"><strong>4. Minify JavaScript</strong></a> 
 
-<a href="#5"><strong>5. Prefix CSS</strong></a><strong>  </strong>
+<a href="#5"><strong>5. Prefix CSS</strong></a> 
 
-<a href="#6"><strong>6. Automate development tasks</strong></a><strong>  </strong>
+<a href="#6"><strong>6. Automate development tasks</strong></a> 
 
 <a href="#7"><strong>7. Congratulations!</strong></a>
 

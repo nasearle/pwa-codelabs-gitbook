@@ -10,11 +10,11 @@
 
 <a href="#overview"><strong>Overview</strong></a>          
 
-<a href="#1"><strong>1.</strong><strong>Get set up</strong></a><strong>  </strong>
+<a href="#1"><strong>1.</strong><strong>Get set up</strong></a> 
 
-<a href="#2"><strong>2. Taking the app offline</strong></a><strong>  </strong>
+<a href="#2"><strong>2. Taking the app offline</strong></a> 
 
-<a href="#3"><strong>Congratulations!</strong></a><strong>  </strong>
+<a href="#3"><strong>Congratulations!</strong></a> 
 
 Concepts: <a href="https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/offline_quickstart.html">Offline Quickstart</a>
 

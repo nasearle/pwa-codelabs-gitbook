@@ -8,23 +8,23 @@
 
 
 
-<a href="#overview"><strong>Overview</strong></a><strong>          </strong>
+<a href="#overview"><strong>Overview</strong></a> 
 
-<a href="#1"><strong>1. Get set up</strong></a><strong>          </strong>
+<a href="#1"><strong>1. Get set up</strong></a> 
 
-<a href="#2"><strong>2. Fetching a resource</strong></a><strong>          </strong>
+<a href="#2"><strong>2. Fetching a resource</strong></a> 
 
-<a href="#3"><strong>3. Fetch an image</strong></a><strong>          </strong>
+<a href="#3"><strong>3. Fetch an image</strong></a> 
 
-<a href="#4"><strong>4. Fetch text</strong></a><strong>          </strong>
+<a href="#4"><strong>4. Fetch text</strong></a> 
 
-<a href="#5"><strong>5. Using HEAD requests</strong></a><strong>          </strong>
+<a href="#5"><strong>5. Using HEAD requests</strong></a> 
 
-<a href="#6"><strong>6. Using POST requests</strong></a><strong>          </strong>
+<a href="#6"><strong>6. Using POST requests</strong></a> 
 
-<a href="#7"><strong>7. Optional: CORS and custom headers</strong></a><strong>        </strong>
+<a href="#7"><strong>7. Optional: CORS and custom headers</strong></a> 
 
-<a href="#8"><strong>Congratulations!</strong></a><strong>        </strong>
+<a href="#8"><strong>Congratulations!</strong></a> 
 
 Concepts: <a href="https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/working_with_the_fetch_api.html">Working with the Fetch API</a>
 

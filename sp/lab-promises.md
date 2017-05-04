@@ -8,15 +8,15 @@
 
 
 
-<a href="#overview"><strong>Overview</strong></a><strong>  </strong>
+<a href="#overview"><strong>Overview</strong></a> 
 
-<a href="#1"><strong>1. Get set up</strong></a><strong>  </strong>
+<a href="#1"><strong>1. Get set up</strong></a> 
 
-<a href="#2"><strong>2. </strong><strong>Using promises</strong></a><strong>  </strong>
+<a href="#2"><strong>2. </strong><strong>Using promises</strong></a> 
 
-<a href="#3"><strong>3. Chaining promises</strong></a><strong>  </strong>
+<a href="#3"><strong>3. Chaining promises</strong></a> 
 
-<a href="#4"><strong>4. Optional: Using Promise.all and Promise.race</strong></a><strong>  </strong>
+<a href="#4"><strong>4. Optional: Using Promise.all and Promise.race</strong></a> 
 
 <a href="#congrats"><strong>Congratulations!</strong></a>
 

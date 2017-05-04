@@ -22,7 +22,7 @@
 
 <a href="#6"><strong>6. Optional: Use the picture and source elements</strong></a>          
 
-<a href="#7"><strong>Congratulations!</strong></a><strong>        </strong>
+<a href="#7"><strong>Congratulations!</strong></a> 
 
 <a id="overview" />
 

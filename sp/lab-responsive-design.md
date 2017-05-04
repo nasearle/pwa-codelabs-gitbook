@@ -8,19 +8,19 @@
 
 
 
-<a href="#overview"><strong>Overview</strong></a><strong>        </strong>
+<a href="#overview"><strong>Overview</strong></a> 
 
-<a href="#1"><strong>1. Get set up</strong></a><strong>        </strong>
+<a href="#1"><strong>1. Get set up</strong></a> 
 
-<a href="#2"><strong>2. Test the page</strong></a><strong>        </strong>
+<a href="#2"><strong>2. Test the page</strong></a> 
 
-<a href="#3"><strong>3. Set the visual viewport</strong></a><strong>        </strong>
+<a href="#3"><strong>3. Set the visual viewport</strong></a> 
 
-<a href="#4"><strong>4. Use media queries</strong></a><strong>        </strong>
+<a href="#4"><strong>4. Use media queries</strong></a> 
 
-<a href="#5"><strong>5. Using Flexbox</strong></a><strong>        </strong>
+<a href="#5"><strong>5. Using Flexbox</strong></a> 
 
-<a href="#6"><strong>6. Using Flexbox as a progressive enhancement</strong></a><strong>        </strong>
+<a href="#6"><strong>6. Using Flexbox as a progressive enhancement</strong></a> 
 
 <a href="#congrats"><strong>Congratulations!</strong></a>
 

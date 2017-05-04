@@ -16,7 +16,7 @@
 
 <a href="#3"><strong>3. Serve files from the cache</strong></a>          
 
-<a href="#4"><strong>4. Add network responses to the cache</strong></a><strong>  </strong>
+<a href="#4"><strong>4. Add network responses to the cache</strong></a> 
 
 <a href="#5"><strong>5. Respond with custom 404 page</strong></a>          
 
@@ -24,7 +24,7 @@
 
 <a href="#7"><strong>7. Delete outdated caches</strong></a>          
 
-<a href="#8"><strong>Congratulations!</strong></a><strong>  </strong>
+<a href="#8"><strong>Congratulations!</strong></a> 
 
 Concepts: <a href="https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/caching-files-with-service-worker.html">Caching Files with Service Worker</a>
 
