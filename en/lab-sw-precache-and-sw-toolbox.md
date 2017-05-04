@@ -158,13 +158,9 @@ Sw-precache allows you generate service workers that precache static assets.
 In <strong>gulpfile.js</strong> replace TODO 4.1 with the following code:
 
 #### gulpfile.js
-
-<code></code>`
-var gulp = require('gulp');
+ <code>`</code> var gulp = require('gulp');
 var path = require('path');
-var swPrecache = require('sw-precache');
-<code></code>`
-
+var swPrecache = require('sw-precache'); <code>`</code> 
 #### Explanation
 
 This code imports the packages and assigns them to variables so that they are easier to reference when creating the task.
@@ -176,9 +172,7 @@ Use <code>sw-precache</code> to generate a service worker as part of a gulp buil
 In <strong>gulpfile.js</strong> replace TODO 4.2 with the following code:
 
 #### gulpfile.js
-
-<code></code>`
-var paths = {
+ <code>`</code> var paths = {
   src: './'
 };
 
@@ -194,9 +188,7 @@ gulp.task('service-worker', function(callback) {
     ],
     stripPrefix: paths.src
   }, callback);
-});
-<code></code>`
-
+}); <code>`</code> 
 Save the file. To test the code, enter the following command at the project root (<strong>app/</strong>):
 
     gulp service-worker
@@ -207,13 +199,13 @@ Refresh the app in the browser and then [inspect the cache](tools_for_pwa_develo
 
 #### Explanation
 
-The code first creates a variable, <code>paths</code>, to define the path of the source files.
+The code first creates a variable, `paths`, to define the path of the source files.
 
 The call to <code>swPrecache.write()</code> does the following:
 
 1. Uses the <code>path</code> module to join <code>paths.src</code> (the location of our source code) with the string <code>service-worker.js</code> to indicate the name and location of the service worker. 
 2. Writes an <code>install</code> event listener in the service worker that adds all the files in <code>staticFilesGlobs</code> to the cache (in this case, <strong>index.html</strong> and <strong>main.css</strong>).
-3. Writes an  [importScripts](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method in the service worker that imports the scripts under <code>importScripts</code>. 
+3. Writes an  [importScripts](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method in the service worker that imports the scripts under `importScripts`. 
 4. Strips the prefixes from the files to make them relative URLs using the <code>stripPrefix</code> method.
 
 <a id="5">
@@ -229,9 +221,7 @@ The <code>sw-toolbox</code> library lets you add service worker routes to enable
 Replace TODO 5 in <strong>js/toolbox-script.js</strong> with the following code:
 
 #### toolbox-script.js
-
-<code></code>`
-// Route #1
+ <code>`</code> // Route #1
 global.toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
   cache: {
     name: 'googleapis',
@@ -246,9 +236,7 @@ global.toolbox.router.get(/\.(?:png|gif|jpg)$/, global.toolbox.cacheFirst, {
     name: 'images-cache',
     maxEntries: 50
   }
-});
-<code></code>`
-
+}); <code>`</code> 
 Save the code and [unregister the service worker](tools_for_pwa_developers.md#unregister) in the browser. Refresh the page once or twice so that the new service worker installs and begins to intercept the network requests. [Inspect the cache](tools_for_pwa_developers.md#storage) in the browser. You should see the <code>googleapis</code> cache populated with the Google web font, and the <code>images-cache</code> containing all of the fetched images.
 
 #### Explanation
@@ -296,9 +284,7 @@ The <code>sw-precache</code> command line tool can be passed a configuration fil
 Copy and paste the following code into the <strong>sw-precache-config.json</strong> file:
 
 #### sw-precache-config.json
-
-<code></code>`
-{
+ <code>`</code> {
   "staticFileGlobs": [
     "index.html",
     "css/main.css"
@@ -307,9 +293,7 @@ Copy and paste the following code into the <strong>sw-precache-config.json</stro
     "node_modules/sw-toolbox/sw-toolbox.js",
     "js/toolbox-script.js"
   ]
-}
-<code></code>`
-
+} <code>`</code> 
 Save the file.
 
 #### Explanation
@@ -330,7 +314,7 @@ If you test the new service worker in the browser the result should be the same 
 
 #### Explanation
 
-This command generates a service worker file (or overwrites the file if it already exists) using the options provided in <code>sw-precache-config.json</code>. The <code>--verbose</code> flag makes the success or error message more detailed.
+This command generates a service worker file (or overwrites the file if it already exists) using the options provided in <code>sw-precache-config.json`. The `--verbose</code> flag makes the success or error message more detailed.
 
 <a id="congrats">
 

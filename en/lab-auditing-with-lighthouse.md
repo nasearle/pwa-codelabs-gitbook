@@ -126,20 +126,14 @@ Create an empty file called <strong>manifest.json</strong> in the <strong>app</s
 Replace TODO 4.1 in <strong>index.html</strong> with the following:
 
 #### index.html
-
-<code></code>`
-<!-- Web Application Manifest -->
-<link rel="manifest" href="manifest.json">
-<code></code>`
-
+ <code>`</code> <!-- Web Application Manifest -->
+<link rel="manifest" href="manifest.json"> <code>`</code> 
 ### 4.2 Add manifest code
 
 Add the following to the <strong>manifest.json</strong> file:
 
 #### manifest.json
-
-<code></code>`
-{
+ <code>`</code> {
   "name": "Demo Blog Application",
   "short_name": "Blog",
   "start_url": "index.html",
@@ -171,17 +165,13 @@ Add the following to the <strong>manifest.json</strong> file:
   "background_color": "#3E4EB8",
   "display": "standalone",
   "theme_color": "#2E3AA1"
-}
-<code></code>`
-
+} <code>`</code> 
 ### 4.3 Add tags for other browsers
 
 Replace TODO 4.3 in <strong>index.html</strong> with the following:
 
 #### index.html
-
-<code></code>`
-<!-- Chrome for Android theme color -->
+ <code>`</code> <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="#2E3AA1">
 
 <!-- Tile color for Win8 -->
@@ -199,9 +189,7 @@ Replace TODO 4.3 in <strong>index.html</strong> with the following:
 <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
 <!-- Tile icon for Win8 (144x144) -->
-<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-<code></code>`
-
+<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> <code>`</code> 
 #### Explanation
 
 We have created a manifest file and "add to homescreen" tags. Don't worry about the details of the manifest and these tags. Here is how they work:
@@ -233,9 +221,7 @@ Create an empty JavaScript file in the root directory (<strong>app</strong>) and
 Now replace TODO 5.1 in <strong>index.html</strong> with the following and save the file:
 
 #### index.html
-
-<code></code>`
-<script>
+ <code>`</code> <script>
   (function() {
     if (!('serviceWorker' in navigator)) {
       console.log('Service worker not supported');
@@ -249,9 +235,7 @@ Now replace TODO 5.1 in <strong>index.html</strong> with the following and save 
       console.log('registration failed', error);
     });
   })();
-</script>
-<code></code>`
-
+</script> <code>`</code> 
 ### 5.2 Caching offline & start pages
 
 The report also indicates that our app must respond with a 200 when offline and must have our starting URL ("start_url") cached. 
@@ -259,9 +243,7 @@ The report also indicates that our app must respond with a 200 when offline and 
 Add the following code to the empty <strong>service-worker.js</strong> file (which should be at <strong>app/service-worker.js</strong>):
 
 #### service-worker.js
-
-<code></code>`
-self.addEventListener('install', function(event) {
+ <code>`</code> self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('static-cache-v1')
     .then(function(cache) {
@@ -288,17 +270,15 @@ self.addEventListener('fetch', function(event) {
       return fetch(event.request);
     })
   );
-});
-<code></code>`
-
+}); <code>`</code> 
 Save the file and refresh the page (for the app, not the Lighthouse page). Check the console and confirm that the service worker has registered successfully.
 
 #### Explanation
 
 We have created a service worker for our app and registered it. Here is what it does:
 
-1. The first block (<code>install</code> event listener) caches the files our app's files, so that they are saved locally. This lets us access them even when offline, which is what the next block does.
-2. The second block (<code>fetch</code> event listener) intercepts requests for resources and checks first if they are cached locally. If they are, the browser gets them from the cache without needing to make a network request. This lets us respond with a 200 even when offline. 
+1. The first block (`install` event listener) caches the files our app's files, so that they are saved locally. This lets us access them even when offline, which is what the next block does.
+2. The second block (`fetch` event listener) intercepts requests for resources and checks first if they are cached locally. If they are, the browser gets them from the cache without needing to make a network request. This lets us respond with a 200 even when offline. 
 
 Once we have loaded the app initially, all the files needed to run the app are saved in the cache. If the page is loaded again, the browser grabs the files from the cache regardless of network conditions. This also lets us satisfy the requirement of having our starting URL (<strong>index.html</strong>) cached.
 
