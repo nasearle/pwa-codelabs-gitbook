@@ -84,7 +84,8 @@ If you have not downloaded the repository, installed Node, and started a local s
 Open Chrome and navigate to <strong>localhost:8080/google-analytics-lab/app</strong>.
 
 <div class="note">
-<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.</div>
+<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.
+</div>
 
 If you have a text editor that lets you open a project, open the <strong>google-analytics-lab/app</strong> folder. This will make it easier to stay organized. Otherwise, open the folder in your computer's file system. The <strong>app</strong> folder is where you will be building the lab.
 
@@ -115,10 +116,12 @@ Test the notification code by using developer tools to [send a push notification
 A notification should appear on your screen. Try clicking it. It should take you to a sample page.
 
 <div class="note">
-<strong>Note: </strong>The developer tools UI is constantly changing and, depending on the browser, may look a little different when you try it.</div>
+<strong>Note: </strong>The developer tools UI is constantly changing and, depending on the browser, may look a little different when you try it.
+</div>
 
 <div class="note">
-<strong>Note:</strong> Simulated push notifications can be sent from the browser even if the subscription object is null.</div>
+<strong>Note:</strong> Simulated push notifications can be sent from the browser even if the subscription object is null.
+</div>
 
 #### For more information
 
@@ -133,7 +136,8 @@ You can learn how to build the starter app and learn more about push in <a href=
 
 
 <div class="note">
-<strong>Note:</strong> The Google Analytics UI is subject to updates and may not look exactly like the screenshots presented in this lab.</div>
+<strong>Note:</strong> The Google Analytics UI is subject to updates and may not look exactly like the screenshots presented in this lab.
+</div>
 
 In a separate tab or window, navigate to  [analytics.google.com](https://analytics.google.com/). Sign in with your  [Gmail account](https://accounts.google.com/signup), and follow the step that matches your status:
 
@@ -156,10 +160,12 @@ The account creation screen should look like this:
 Choose website. 
 
 <div class="note">
-<strong>Note: </strong>Websites and mobile apps implement Google Analytics differently. This lab covers web sites. For mobile apps, see <a href="https://support.google.com/analytics/answer/2587086?ref_topic=2587085&rd=1">analytics for mobile applications</a>.</div>
+<strong>Note: </strong>Websites and mobile apps implement Google Analytics differently. This lab covers web sites. For mobile apps, see <a href="https://support.google.com/analytics/answer/2587086?ref_topic=2587085&rd=1">analytics for mobile applications</a>.
+</div>
 
 <div class="note">
-<strong>Note:</strong> All the names we use for the account and website are arbitrary. They are only used for reference and don't affect analytics.</div>
+<strong>Note:</strong> All the names we use for the account and website are arbitrary. They are only used for reference and don't affect analytics.
+</div>
 
 #### Setting up your account
 
@@ -173,7 +179,8 @@ The property must be associated with a site. We will use a mock  [GitHub Pages](
 2. Set the website URL to <strong>USERNAME.github.io/google-analytics-lab/</strong>, where <strong>USERNAME</strong> is your  [GitHub](https://github.com/) username (or just your name if you don't have a GitHub account). Set the protocol to <strong>https://</strong>. 
 
 <div class="note">
-<strong>Note: </strong>For this lab, the site is just a placeholder, you do not need to set up a GitHub Pages site or be familiar with GitHub Pages or even GitHub. The site URL that you use to create your Google Analytics account is only used for things like automated testing. </div>
+<strong>Note: </strong>For this lab, the site is just a placeholder, you do not need to set up a GitHub Pages site or be familiar with GitHub Pages or even GitHub. The site URL that you use to create your Google Analytics account is only used for things like automated testing. 
+</div>
 
 3. Select any industry or category. 
 4. Select your timezone. 
@@ -243,7 +250,8 @@ You should see yourself being tracked. The screen should look similar to this (n
 ![Real-time screen](../img/83ce80dc15443148.png)
 
 <div class="note">
-<strong>Note: </strong>If you don't see this, refresh the <strong>app</strong> page and check again.</div>
+<strong>Note: </strong>If you don't see this, refresh the <strong>app</strong> page and check again.
+</div>
 
 The <strong>Active Page</strong> indicates which page is being viewed. Back in the app, click <strong>Other page</strong> to navigate to the other page. Then return to the Google Analytics site and check <strong>Active Page</strong> again. It should now show <strong>app/pages/other.html</strong> (this might take a few seconds).
 
@@ -296,7 +304,8 @@ The code so far provides the basic functionality of Google Analytics. A tracker 
 We are using the real-time viewing mode because we have just created the app. Normally, records of past data would also be available. You can view this from the reporting tab by selecting <strong>Audience</strong> and then <strong>Overview</strong>. 
 
 <div class="note">
-<strong>Note:</strong> Data for our app is not available yet. It takes some time to process the data, typically <a href="https://support.google.com/analytics/answer/1070983#DataProcessingLatency">24-48 hours</a>.</div>
+<strong>Note:</strong> Data for our app is not available yet. It takes some time to process the data, typically <a href="https://support.google.com/analytics/answer/1070983#DataProcessingLatency">24-48 hours</a>.
+</div>
 
 Here you can see general information such as pageview records, bounce rate, ratio of new and returning visitors, and other statistics.
 
@@ -323,12 +332,14 @@ Checking the dashboard is not an efficient method of testing. Google Analytics o
 TODO: Replace <strong>analytics.js</strong> in the tracking snippet (in <strong>index.html</strong> and <strong>pages/other.html</strong>) with <strong>analytics_debug.js</strong>.
 
 <div class="note">
-<strong>Note:</strong> Don't use <strong>analytics_debug.js</strong> in production. It is much larger than <strong>analytics.js</strong>.</div>
+<strong>Note:</strong> Don't use <strong>analytics_debug.js</strong> in production. It is much larger than <strong>analytics.js</strong>.
+</div>
 
 Save the scripts and refresh the page. You should see the browser console logging details of the "create" and "send" commands. 
 
 <div class="note">
-<strong>Note:</strong> There is also a <a href="https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna">Chrome debugger extension</a> that can be used alternatively. </div>
+<strong>Note:</strong> There is also a <a href="https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna">Chrome debugger extension</a> that can be used alternatively. 
+</div>
 
 Navigate back to <strong>app/index.html</strong> using the <strong>Back</strong> link. Check the console logs again. Note how the location field changes on the data sent by the send command.
 
@@ -373,7 +384,8 @@ When using the send command in the `ga` command queue, the hit type can be set t
 <div class="note">
 <strong>Note:</strong> Many of the <code>ga</code> commands are flexible and can use multiple signatures. 
 
-You can see all method signatures in the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference">command queue reference</a>.</div>
+You can see all method signatures in the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference">command queue reference</a>.
+</div>
 
 <strong>Optional</strong>: Update the custom event that you just added to use the alternative signature described in the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference">command queue reference</a>. Hint: Look for the "send" command examples.
 
@@ -424,7 +436,8 @@ Save the file. Refresh the app and click <strong>Subscribe</strong>. The browser
 Chrome uses Firebase Cloud Messaging (FCM) to route its push messages. All push messages are sent to FCM, and then FCM passes them to the correct client.
 
 <div class="note">
-<strong>Note:</strong> FCM has replaced Google Cloud Messaging (GCM). Some of the code to push messages to Chrome still contains references to GCM. These references are correct and work for both GCM and FCM.</div>
+<strong>Note:</strong> FCM has replaced Google Cloud Messaging (GCM). Some of the code to push messages to Chrome still contains references to GCM. These references are correct and work for both GCM and FCM.
+</div>
 
 ### 7.2 Add custom analytics
 
@@ -622,7 +635,8 @@ return fetch('https://www.google-analytics.com/collect', {
 The hit is sent with the  [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) using a POST request. The body of the request is the hit data.
 
 <div class="note">
-<strong>Note:</strong> You can learn more about the Fetch API in the  [fetch codelab](https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-codelabs/content/docs/lab_fetch_api.html).</div>
+<strong>Note:</strong> You can learn more about the Fetch API in the  [fetch codelab](https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-codelabs/content/docs/lab_fetch_api.html).
+</div>
 
 #### For more information
 
@@ -678,14 +692,16 @@ Now try these experiments and check the console and Google Analytics dashboard f
 Do you see console logs for each event? Do you see events on Google Analytics?
 
 <div class="note">
-<strong>Note: </strong>Because these events use the Measurement Protocol interface instead of <strong>analytics_debug.js</strong>, the debug console logs don't appear. You can debug the Measurement Protocol hits with <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/validating-hits"> hit validation</a>.</div>
+<strong>Note: </strong>Because these events use the Measurement Protocol interface instead of <strong>analytics_debug.js</strong>, the debug console logs don't appear. You can debug the Measurement Protocol hits with <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/validating-hits"> hit validation</a>.
+</div>
 
 #### Explanation
 
 We start by using  [ImportScripts](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) to import the <strong>analytics-helper.js</strong> file with our `sendAnalyticsEvent` helper function. Then we use this function to send custom events at appropriate places (such as when push events are received, or notifications are interacted with). We pass in the `eventAction` and `eventCategory` that we want to associate with the event as parameters. 
 
 <div class="note">
-<strong>Note:</strong> We have used <code>event.waitUntil</code> to wrap all of our asynchronous operations. If unfamiliar, <code>event.waitUntil</code> extends the life of an event until the asynchronous actions inside of it have completed. This ensures that the service worker will not be terminated pre-emptively while waiting for an asynchronous action to complete.</div>
+<strong>Note:</strong> We have used <code>event.waitUntil</code> to wrap all of our asynchronous operations. If unfamiliar, <code>event.waitUntil</code> extends the life of an event until the asynchronous actions inside of it have completed. This ensures that the service worker will not be terminated pre-emptively while waiting for an asynchronous action to complete.
+</div>
 
 #### For more information
 
@@ -742,10 +758,12 @@ Here we import and initialize the <strong>offline-google-analytics-import.js</st
 This strategy won't work for hits sent from our service worker because the service worker doesn't listen to fetch events from itself (that could cause some serious problems!). This isn't so important in this case because all the hits that we would want to send from the service worker are tied to online events (like push notifications) anyways.
 
 <div class="note">
-<strong>Note:</strong> These events don't use <strong>analytics_debug.js</strong>, so the debug console logs don't appear.</div>
+<strong>Note:</strong> These events don't use <strong>analytics_debug.js</strong>, so the debug console logs don't appear.
+</div>
 
 <div class="note">
-<strong>Note:</strong> Some users have reported a bug in Chrome that recreates deleted databases on reload.</div>
+<strong>Note:</strong> Some users have reported a bug in Chrome that recreates deleted databases on reload.
+</div>
 
 #### For more information
 
@@ -765,7 +783,8 @@ This strategy won't work for hits sent from our service worker because the servi
 Add two actions to the push notifications. Send a distinct analytics hit for each action that the user clicks. Remember that you will need to use the Measurement Protocol interface because this code will be in the service worker. Test the actions and make sure the hits are sending.
 
 <div class="note">
-<strong>Note:</strong> Notification actions may not be available in Firefox.</div>
+<strong>Note:</strong> Notification actions may not be available in Firefox.
+</div>
 
 <a id="11" />
 
@@ -780,7 +799,8 @@ How can you send analytics hits for an action that takes the user away from your
 Research the  [hitCallback](https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits) functionality. Use a hitCallback to send an analytics event whenever a user clicks the <strong>Special offers</strong> external link. Make sure to use a timeout so that if the analytics library fails, the user's desired action will still complete!
 
 <div class="note">
-<strong>Note:</strong> If the user's browser supports <code>navigator.sendBeacon</code> then 'beacon' can be specified as the transport mechanism. This avoids the need for a hitCallback. See the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits">documentation</a> for more info.</div>
+<strong>Note:</strong> If the user's browser supports <code>navigator.sendBeacon</code> then 'beacon' can be specified as the transport mechanism. This avoids the need for a hitCallback. See the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits">documentation</a> for more info.
+</div>
 
 #### For more information
 

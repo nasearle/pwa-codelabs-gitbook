@@ -70,7 +70,8 @@ If you have not downloaded the repository, installed Node, and started a local s
 Open your browser and navigate to <strong>localhost:8080/cache-api-lab/app</strong>.
 
 <div class="note">
-<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.</div>
+<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.
+</div>
 
 If you have a text editor that lets you open a project, open the <strong>cache-api-lab/app</strong> folder. This will make it easier to stay organized. Otherwise, open the folder in your computer's file system. The <strong>app</strong> folder is where you will be building the lab. 
 
@@ -130,15 +131,18 @@ Save the code and reload the page in the browser. [Update the service worker](to
 Open the first QUnit test page, <strong>app/test/test1.html</strong>, in another browser tab.
 
 <div class="note">
-<strong>Note: </strong>Be sure to open the test page using the localhost address so that it opens from the server and not directly from the file system.</div> 
+<strong>Note: </strong>Be sure to open the test page using the localhost address so that it opens from the server and not directly from the file system.
+</div> 
 
 This page contains several tests for testing our app at each stage of the codelab. Passed tests are blue and failed tests are red. At this point, your app should pass the first two tests. These check that the cache exists and that it contains the app shell.
 
 <div class="note">
-<strong>Caution:</strong> Close the test page when you're finished with it, otherwise you won't be able to activate the updated service worker in the next sections. See the  [Introduction to service worker](https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/introduction_to_service_workers.html#activation) text for an explanation. </div>
+<strong>Caution:</strong> Close the test page when you're finished with it, otherwise you won't be able to activate the updated service worker in the next sections. See the  [Introduction to service worker](https://google-developer-training.gitbooks.io/progressive-web-apps-ilt-concepts/content/docs/introduction_to_service_workers.html#activation) text for an explanation. 
+</div>
 
 <div class="note">
-<strong>Note:</strong> In Chrome, you can <a href="tools_for_pwa_developers.md#clearcache">delete the cache</a> in <strong>DevTools</strong>.</div>
+<strong>Note:</strong> In Chrome, you can <a href="tools_for_pwa_developers.md#clearcache">delete the cache</a> in <strong>DevTools</strong>.
+</div>
 
 #### Explanation
 
@@ -261,7 +265,8 @@ To test your code, save what you've written and then [update the service worker]
 Network response errors do not throw an error in the `fetch` promise. Instead, `fetch` returns the response object containing the error code of the network error. This means we handle network errors in a `.then` instead of a `.catch`. However, if the `fetch` cannot reach the network (user is offline) an error is thrown in the promise and the `.catch` executes.
 
 <div class="note">
-<strong>Note:</strong> When intercepting a network request and serving a custom response, the service worker does not redirect the user to the address of the new response. The response is served at the address of the original request. For example, if the user requests a nonexistent file at <strong>www.example.com/non-existent.html</strong> and the service worker responds with a custom 404 page, <strong>404.html</strong>, the custom page will display at <strong>www.example.com/non-existent.html</strong>, not <strong>www.example.com/404.html</strong>.</div>
+<strong>Note:</strong> When intercepting a network request and serving a custom response, the service worker does not redirect the user to the address of the new response. The response is served at the address of the original request. For example, if the user requests a nonexistent file at <strong>www.example.com/non-existent.html</strong> and the service worker responds with a custom 404 page, <strong>404.html</strong>, the custom page will display at <strong>www.example.com/non-existent.html</strong>, not <strong>www.example.com/404.html</strong>.
+</div>
 
 #### For more information
 

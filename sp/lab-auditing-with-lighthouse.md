@@ -66,7 +66,8 @@ If you have not downloaded the repository, installed Node, and started a local s
 Open your browser and navigate to <strong>localhost:8080/lighthouse-lab/app</strong>.
 
 <div class="note">
-<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.</div>
+<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.
+</div>
 
 If you have a text editor that lets you open a project, open the <strong>lighthouse-lab/app</strong> folder. This will make it easier to stay organized. Otherwise, open the folder in your computer's file system. The <strong>app</strong> folder is where you will be building the lab.
 
@@ -103,7 +104,8 @@ Lighthouse runs the report and generates an HTML page with the results. The repo
 ![starting-score](../img/be57a3905fb6f93f.png)
 
 <div class="note">
-<strong>Note:</strong> The UI for Lighthouse is still being updated, so your report may not look exactly like this one.</div>
+<strong>Note:</strong> The UI for Lighthouse is still being updated, so your report may not look exactly like this one.
+</div>
 
 Looks like we have a pretty low score (your score may not match exactly). Take a moment to look through the report and see what is missing.
 
@@ -317,7 +319,8 @@ Now we need to retest the app to see our changes. Return to the localhost page w
 Now we should have passed many more tests.
 
 <div class="note">
-<strong>Note:</strong> You may need to <a href="tools_for_pwa_developers.md#disablehttpcache">disable the browser cache</a> to see the improved results. Then refresh the app and run Lighthouse again.</div>
+<strong>Note:</strong> You may need to <a href="tools_for_pwa_developers.md#disablehttpcache">disable the browser cache</a> to see the improved results. Then refresh the app and run Lighthouse again.
+</div>
 
  The report should look something like this:
 

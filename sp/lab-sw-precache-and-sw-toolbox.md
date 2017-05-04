@@ -71,7 +71,8 @@ If you have not downloaded the repository, installed Node, and started a local s
 Open your browser and navigate to <strong>localhost:8080/sw-precache-lab/app</strong>.
 
 <div class="note">
-<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.</div>
+<strong>Note:</strong> <a href="tools_for_pwa_developers.md#unregister">Unregister</a> any service workers and <a href="tools_for_pwa_developers.md#clearcache">clear all service worker caches</a> for localhost so that they do not interfere with the lab.
+</div>
 
 If you have a text editor that lets you open a project, open the <strong>sw-precache-lab/app</strong> folder. This will make it easier to stay organized. Otherwise, open the folder in your computer's file system. The <strong>app</strong> folder is where you will be building the lab. 
 
@@ -259,7 +260,8 @@ Route #1 creates a new cache called `googleapis` and stores up to 20 items (the 
 Route #2 also uses the cache-first strategy. It matches all the files ending in <strong>png</strong>, <strong>gif</strong>, or <strong>jpg</strong> (image files) using a regular expression and stores them in the `images-cache` cache with a limit of 50 items in the cache. If a new item is added to a full cache, then the oldest is deleted to make space. 
 
 <div class="note">
-<strong>Note:</strong> You can add <code>toolbox.options.debug = true;</code> to the script for more verbose console logs.</div>
+<strong>Note:</strong> You can add <code>toolbox.options.debug = true;</code> to the script for more verbose console logs.
+</div>
 
 #### For more information
 
