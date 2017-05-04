@@ -97,7 +97,9 @@ Cache the application shell in the "install" event handler in the service worker
 Replace TODO 2 in <strong>serviceworker.js</strong> with the following code:
 
 #### service-worker.js
- <code>`</code> var filesToCache = [
+
+```
+var filesToCache = [
   '.',
   'style/main.css',
   'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
@@ -121,7 +123,9 @@ self.addEventListener('install', function(event) {
       return cache.addAll(filesToCache);
     })
   );
-}); <code>`</code> 
+});
+```
+
 Save the code and reload the page in the browser. [Update the service worker](tools_for_pwa_developers.md#update) and then [open the cache storage](tools_for_pwa_developers.md#storage) in the browser. You should see the files appear in the table. You may need to refresh the page again for the changes to appear.
 
 Open the first QUnit test page, <strong>app/test/test1.html</strong>, in another browser tab.
@@ -164,7 +168,9 @@ Now that we have the files cached, we can intercept requests for those files fro
 Replace TODO 3 in <strong>service-worker.js</strong> with the following:
 
 #### service-worker.js
- <code>`</code> self.addEventListener('fetch', function(event) {
+
+```
+self.addEventListener('fetch', function(event) {
   console.log('Fetch event for ', event.request.url);
   event.respondWith(
     caches.match(event.request).then(function(response) {
@@ -183,7 +189,9 @@ Replace TODO 3 in <strong>service-worker.js</strong> with the following:
       
     })
   );
-}); <code>`</code> 
+});
+```
+
 Save the code and [update the service worker](tools_for_pwa_developers.md#update) in the browser (make sure you have closed the <strong>test.html</strong> page). Refresh the page to see the network requests being logged to the console. Now [take the app offline](tools_for_pwa_developers.md#offline) and refresh the page. The page should load normally!
 
 #### Explanation
@@ -209,7 +217,9 @@ We can add files to the cache as they are requested.
 Replace TODO 4 in the <code>fetch</code> event handler with the code to add the files returned from the fetch to the cache:
 
 #### service-worker.js
- <code>`</code> .then(function(response) {
+
+```
+.then(function(response) {
 
   // TODO 5 - Respond with custom 404 page
 
@@ -219,7 +229,9 @@ Replace TODO 4 in the <code>fetch</code> event handler with the code to add the 
     }
     return response;
   });
-}); <code>`</code> 
+});
+```
+
 Save the code. Take the app back online and [update the service worker](tools_for_pwa_developers.md#update). Visit at least one of the links on the homepage, then take the app offline again. Now if you revisit the pages they should load normally! Try navigating to some pages you haven't visited before.
 
 Take the app back online and open <strong>app/test/test1.html</strong> in a new tab. Your app should now pass the third test that checks whether network responses are being added to the cache. Remember to close the test page when you're done.
@@ -299,7 +311,9 @@ We can get rid of unused caches in the service worker "activate" event.
 Replace TODO 7 in <strong>service-worker.js</strong> with the following code:
 
 #### service-worker.js
- <code>`</code> self.addEventListener('activate', function(event) {
+
+```
+self.addEventListener('activate', function(event) {
   console.log('Activating new service worker...');
 
   var cacheWhitelist = [staticCacheName];
@@ -315,11 +329,17 @@ Replace TODO 7 in <strong>service-worker.js</strong> with the following code:
       );
     })
   );
-}); <code>`</code> 
+});
+```
+
 Try changing the name of the cache to "pages-cache-v2": 
 
 #### service-worker.js
- <code>`</code> var staticCacheName = 'pages-cache-v2'; <code>`</code> 
+
+```
+var staticCacheName = 'pages-cache-v2';
+```
+
 Save the code and [update the service worker](tools_for_pwa_developers.md#update) in the browser. [Inspect the cache storage](tools_for_pwa_developers.md#storage) in your browser. You should see just the new cache. The old cache, `pages-cache-v1`, has been removed.
 
 Open <strong>app/test/test2.html</strong> in a new browser tab. The test checks whether <code>pages-cache-v1</code> has been deleted and that <code>pages-cache-v2</code> has been created.

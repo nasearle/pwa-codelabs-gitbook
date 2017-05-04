@@ -91,10 +91,14 @@ Because IndexedDB isn't supported by all browsers, we need to check that the use
 Replace TODO 2 in <strong>app/js/main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> if (!('indexedDB' in window)) {
+
+```
+if (!('indexedDB' in window)) {
   console.log('This browser doesn\'t support IndexedDB');
   return;
-} <code>`</code> 
+}
+```
+
 <a id="3" />
 
 
@@ -110,7 +114,11 @@ Create the database for your app.
 In <strong>js/main.js</strong>, replace <code>var dbPromise;</code> with the following code:
 
 #### main.js
- <code>`</code> var dbPromise = idb.open('couches-n-things', 1); <code>`</code> 
+
+```
+var dbPromise = idb.open('couches-n-things', 1);
+```
+
 In the browser, [open IndexedDB](tools_for_pwa_developers.md#indexeddb) in the developer tools and confirm that your database exists.
 
 Open the QUnit test page, <strong>app/test/test.html</strong>, in another browser tab. This page contains several tests for testing our app at each stage of the codelab. Passed tests are blue and failed tests are red. Your app should pass the first test that checks whether the <code>couches-n-things</code> database exists in the browser.
@@ -120,7 +128,8 @@ Open the QUnit test page, <strong>app/test/test.html</strong>, in another browse
 </div>
 
 #### Explanation
- <code>idb.open</code> takes a database name, version number, and optional callback function for performing database updates (not included in the above code). The version number determines whether the upgrade callback function is called. If the version number is greater than the version number of the database existing in the browser, then the upgrade callback is executed.
+
+`idb.open` takes a database name, version number, and optional callback function for performing database updates (not included in the above code). The version number determines whether the upgrade callback function is called. If the version number is greater than the version number of the database existing in the browser, then the upgrade callback is executed.
 
 <div class="note">
 <strong>Note: </strong>If at any point in the codelab your database gets into a bad state, you can delete it from the console with the following command: <code>indexedDB.deleteDatabase('couches-n-things');</code>. Note that you can't delete the database while the testing page is open.
@@ -137,7 +146,9 @@ Let's create an object store in the database to hold the furniture objects.
 To complete TODO 3.2 in <strong>main.js</strong>, replace <code>var dbPromise = idb.open('couches-n-things', 1);</code> with the following:
 
 #### main.js
- <code>`</code> var dbPromise = idb.open('couches-n-things', 2, function(upgradeDb) {
+
+```
+var dbPromise = idb.open('couches-n-things', 2, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
       // a placeholder case so that the switch block will 
@@ -154,7 +165,9 @@ To complete TODO 3.2 in <strong>main.js</strong>, replace <code>var dbPromise = 
     // TODO 5.1 - create an 'orders' object store
 
   }
-}); <code>`</code> 
+});
+```
+
 Save the code and reload the page in the browser. [Open IndexedDB](tools_for_pwa_developers.md#indexeddb) in your browser's developer tools and expand the <code>couches-n-things</code> database. You should see the empty <code>products</code> object store.
 
 Open the QUnit test page. Your app should now pass the second test that checks whether the <code>products</code> object store exists.
@@ -183,7 +196,9 @@ Add some sample furniture items to the object store.
 Replace TODO 3.3 in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> dbPromise.then(function(db) {
+
+```
+dbPromise.then(function(db) {
   var tx = db.transaction('products', 'readwrite');
   var store = tx.objectStore('products');
   var items = [
@@ -251,7 +266,9 @@ Replace TODO 3.3 in <strong>main.js</strong> with the following code:
   console.log('All items added successfully!');
 }).catch(function(e) {
   console.log('Error adding items: ', e);
-}); <code>`</code> 
+});
+```
+
 Save the file and reload the page in the browser. Click <strong>Add Products</strong> and refresh the page. Confirm that the objects display in the <code>products</code> object store under <code>couches-n-things</code> in the developer tools.
 
 Reload the test page. The app should now pass the third test that checks whether the objects have been added to the <code>products</code> object store. 
@@ -288,10 +305,14 @@ Create some indexes on your object store.
 Replace TODO 4.1 in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> case 2:
+
+```
+case 2:
   console.log('Creating a name index');
   var store = upgradeDb.transaction.objectStore('products');
-  store.createIndex('name', 'name', {unique: true}); <code>`</code> 
+  store.createIndex('name', 'name', {unique: true});
+```
+
 <div class="note">
 <strong>Important:</strong> Remember to change the version number to 3 before you test the code in the browser.
 </div>
@@ -299,7 +320,9 @@ Replace TODO 4.1 in <strong>main.js</strong> with the following code:
 The full <code>idb.open</code> method should look like this:
 
 #### main.js
- <code>`</code> var dbPromise = idb.open('couches-n-things', 3, function(upgradeDb) {
+
+```
+var dbPromise = idb.open('couches-n-things', 3, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
       // a placeholder case so that the switch block will 
@@ -318,7 +341,9 @@ The full <code>idb.open</code> method should look like this:
     // TODO 5.1 - create an 'orders' object store
 
   }
-}); <code>`</code> 
+});
+```
+
 <div class="note">
 <strong>Note:</strong> We did not include break statements in the switch block so that all of the latest updates to the database will execute even if the user is one or more versions behind.
 </div>
@@ -359,12 +384,16 @@ Use the indexes you created in the previous sections to retrieve items from the 
 Replace TODO 4.3 in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> return dbPromise.then(function(db) {
+
+```
+return dbPromise.then(function(db) {
   var tx = db.transaction('products', 'readonly');
   var store = tx.objectStore('products');
   var index = store.index('name');
   return index.get(key);
-}); <code>`</code> 
+});
+```
+
 Save the code and refresh the page in the browser.
 
 <div class="note">
@@ -394,7 +423,9 @@ Use a cursor object to get items from your store within a price range.
 Replace TODO 4.4a in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> var lower = document.getElementById('priceLower').value;
+
+```
+var lower = document.getElementById('priceLower').value;
 var upper = document.getElementById('priceUpper').value;
 var lowerNum = Number(document.getElementById('priceLower').value);
 var upperNum = Number(document.getElementById('priceUpper').value);
@@ -426,7 +457,9 @@ dbPromise.then(function(db) {
 }).then(function() {
   if (s === '') {s = '<p>No results.</p>';}
   document.getElementById('results').innerHTML = s;
-}); <code>`</code> 
+});
+```
+
 Save the code and refresh the page in the browser. Enter some prices into the 'price' text boxes (without a currency symbol) and click <strong>Search</strong>. Items should appear on the page ordered by price. 
 
 <strong>Optional</strong>: Replace TODO 4.4b in the <code>getByDesc()</code> function with the code to get the items by their descriptions. The first part is done for you. The function uses the 'only' method on <code>IDBKeyrange</code> to match all items with exactly the provided description.
@@ -484,7 +517,9 @@ To complete TODO 5.2 in <strong>main.js</strong>, add the following items to the
 </div>
 
 #### main.js
- <code>`</code> var items = [
+
+```
+var items = [
   {
     name: 'Cabinet',
     id: 'ca-brn-ma',
@@ -512,7 +547,9 @@ To complete TODO 5.2 in <strong>main.js</strong>, add the following items to the
     description: 'A very comfy couch',
     quantity: 3
   }
-]; <code>`</code> 
+];
+```
+
 Save the code and refresh the page in the browser. Click <strong>Add Orders</strong> and refresh the page again. Confirm that the objects show up in the <code>orders</code> store in the developer tools.
 
 Refresh the test page. Your app should now pass the ninth test which checks if the sample orders were added to the <code>orders</code> object store.
@@ -540,7 +577,9 @@ This step processes the array of orders passed to the <code>processOrders</code>
 Replace TODO 5.5 in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> return dbPromise.then(function(db) {
+
+```
+return dbPromise.then(function(db) {
   var tx = db.transaction('products');
   var store = tx.objectStore('products');
   return Promise.all(
@@ -550,7 +589,9 @@ Replace TODO 5.5 in <strong>main.js</strong> with the following code:
       });
     })
   );
-}); <code>`</code> 
+});
+```
+
 #### Explanation
 
 This code gets each object from the <code>products</code> object store with an id matching the corresponding order, and passes it and the order to the <code>decrementQuantity</code> function.
@@ -567,7 +608,9 @@ Now we need to check if there are enough items left in the <code>products</code>
 Replace TODO 5.6 in <strong>main.js</strong> with the following code:
 
 #### main.js
- <code>`</code> return new Promise(function(resolve, reject) {
+
+```
+return new Promise(function(resolve, reject) {
   var item = product;
   var qtyRemaining = item.quantity - order.quantity;
   if (qtyRemaining < 0) {
@@ -578,7 +621,9 @@ Replace TODO 5.6 in <strong>main.js</strong> with the following code:
   }
   item.quantity = qtyRemaining;
   resolve(item);
-}); <code>`</code> 
+});
+```
+
 Refresh the test page. Your app should now pass the eleventh test, which checks if the <code>decrementQuantity</code> function subtracts the quantity ordered from the quantity available.
 
 #### Explanation

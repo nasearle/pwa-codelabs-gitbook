@@ -123,7 +123,11 @@ Note that a <strong>node_modules</strong> directory has been added to the projec
 In <strong>gulpfile.js</strong>, replace the TODO 3 comment with the following:
 
 #### gulpfile.js
- <code>`</code> var gulp = require('gulp'); <code>`</code> 
+
+```
+var gulp = require('gulp');
+```
+
 #### Explanation 
 
 We start by generating <strong>package.json</strong> with <code>npm init</code> (the <code>-y</code> flag uses default configuration values for simplicity). This file is used to keep track of the packages that your project uses, including gulp and its dependencies.
@@ -149,15 +153,23 @@ From <strong>app/</strong>, run the following in the command line:
 Now replace TODO 4.1 in <strong>gulpfile.js</strong> with the following code:
 
 #### gulpfile.js
- <code>`</code> var uglify = require('gulp-uglify'); <code>`</code> 
+
+```
+var uglify = require('gulp-uglify');
+```
+
 Replace TODO 4.2 with the following code:
 
 #### gulpfile.js
- <code>`</code> gulp.task('minify', function() {
+
+```
+gulp.task('minify', function() {
   gulp.src('js/main.js')
   .pipe(uglify())
   .pipe(gulp.dest('build'));
-}); <code>`</code> 
+});
+```
+
 Save the file. From <strong>app/</strong>, run the following in the command line:
 
     gulp minify
@@ -213,7 +225,11 @@ Usually we want to run multiple tasks each time we rebuild an application. Rathe
 Replace TODO 6.1 in <strong>gulpfile.js</strong> with the following:
 
 #### gulpfile.js
- <code>`</code> gulp.task('default', ['minify', 'processCSS']); <code>`</code> 
+
+```
+gulp.task('default', ['minify', 'processCSS']);
+```
+
 Now delete the <strong>app/build</strong> folder and run the following in the command line (from <strong>app/</strong>):
 
     gulp
@@ -231,9 +247,13 @@ Even with default tasks, it can become tedious to run tasks each time a file is 
 Replace TODO 6.2 in <strong>gulpfile.js</strong> with the following:
 
 #### gulpfile.js
- <code>`</code> gulp.task('watch', function() {
+
+```
+gulp.task('watch', function() {
   gulp.watch('styles/*.css', ['processCSS']);
-}); <code>`</code> 
+});
+```
+
 Save the file. From <strong>app/</strong>, run the following in the command line:
 
     gulp watch
@@ -261,16 +281,24 @@ From <strong>app/</strong>, run the following in the command line:
 Replace TODO 6.3a in <strong>gulpfile.js</strong> with the following:
 
 #### gulpfile.js
- <code>`</code> var browserSync = require('browser-sync'); <code>`</code> 
+
+```
+var browserSync = require('browser-sync');
+```
+
 Now replace TODO 6.3b in <strong>gulpfile.js</strong> with the following: 
 
 #### gulpfile.js
- <code>`</code> gulp.task('serve', function() {
+
+```
+gulp.task('serve', function() {
   browserSync.init({
     server: '.',
     port: 3000
   });
-}); <code>`</code> 
+});
+```
+
 Save the file. Now run the following in the command line (from <strong>app/</strong>):
 
     gulp serve
@@ -288,14 +316,18 @@ Let's combine everything learned so far.
 TODO: Change the default tasks from <code>minify</code> and <code>processCSS</code> to <code>serve</code>.
 
 TODO: Update the <code>serve</code> task to the following code:
- <code>`</code> gulp.task('serve', ['processCSS'], function() {
+
+```
+gulp.task('serve', ['processCSS'], function() {
   browserSync.init({
     server: '.',
     port: 3000
   });
   gulp.watch('styles/*.css', ['processCSS']).on('change', browserSync.reload);
   gulp.watch('*.html').on('change', browserSync.reload);
-}); <code>`</code> 
+});
+```
+
 Close the app from the browser and delete <strong>app/build/main.css</strong>. From <strong>app/</strong>, run the following in the command line: 
 
     gulp

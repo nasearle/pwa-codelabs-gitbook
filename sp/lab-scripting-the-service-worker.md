@@ -98,7 +98,9 @@ Open <strong>index.html</strong> in your text editor.
 Replace TODO 2 with the following code:
 
 #### index.html
- <code>`</code> if (!('serviceWorker' in navigator)) {
+
+```
+if (!('serviceWorker' in navigator)) {
   console.log('Service worker not supported');
   return;
 }
@@ -108,7 +110,9 @@ navigator.serviceWorker.register('service-worker.js')
 })
 .catch(function(error) {
   console.log('Registration failed:', error);
-}); <code>`</code> 
+});
+```
+
 Save the script and refresh the page. The <a href="tools_for_pwa_developers.md#console">console</a> should return a message indicating that the service worker was registered. 
 
 In your browser, navigate to <strong>test-registered.html</strong> (<strong>app/test/test-registered.html</strong>) to confirm that you have registered the service worker. This is a unit test. Passed tests are blue and failed tests are red. If you've done everything correctly so far, this test should be blue. Close the test page when you are done with it.
@@ -142,14 +146,18 @@ Open <strong>service-worker.js</strong> in your text editor.
 Replace TODO 3.1 with the following code:
 
 #### service-worker.js
- <code>`</code> self.addEventListener('install', function(event) {
+
+```
+self.addEventListener('install', function(event) {
   console.log('Service worker installing...');
   // TODO 3.4: Skip waiting
 });
 
 self.addEventListener('activate', function(event) {
   console.log('Service worker activating...');
-}); <code>`</code> 
+});
+```
+
 Save the file. Close <strong>app/test/test-registered.html</strong> page if you have not already. Manually <a href="tools_for_pwa_developers.md#unregister">unregister the service worker</a> and refresh the page to install and activate the updated service worker. The console log should indicate that the new service worker was registered, installed, and activated. 
 
 <div class="note">
@@ -193,7 +201,11 @@ After initial installation and activation, re-registering an existing worker doe
 Replace TODO 3.3 in <strong>service-worker.js </strong>with the following comment:
 
 #### service-worker.js
- <code>`</code> // I'm a new service worker <code>`</code> 
+
+```
+// I'm a new service worker
+```
+
 Save the file and refresh the page. Notice that the new service worker installs but does not activate. 
 
 Navigate to <strong>test-waiting.html</strong> (<strong>app/test/test-waiting.html</strong>) to confirm that the new service worker is installed but not activated. The test should be passing (blue).
@@ -215,7 +227,11 @@ It is possible for a new service worker to activate immediately, even if an exis
 Replace TODO 3.4 in <strong>service-worker.js</strong> with the following code:
 
 #### service-worker.js
- <code>`</code> self.skipWaiting(); <code>`</code> 
+
+```
+self.skipWaiting();
+```
+
 Save the file and refresh the page. Notice that the new service worker installs and activates immediately, even though a previous service worker was in control. 
 
 #### Explanation
@@ -239,9 +255,13 @@ Service Workers can act as a proxy between your web app and the network.
 Replace TODO 4 in <strong>service-worker.js</strong> with:
 
 #### service-worker.js
- <code>`</code> self.addEventListener('fetch', function(event) {
+
+```
+self.addEventListener('fetch', function(event) {
   console.log('Fetching:', event.request.url);
-}); <code>`</code> 
+});
+```
+
 Save the script and refresh the page to install and activate the updated service worker. 
 
 Check the console and observe that no fetch events were logged. Refresh the page and check the console again. You should see fetch events this time for the page and its assets (like CSS).
@@ -285,7 +305,9 @@ Service workers have scope. The scope of the service worker determines from whic
 Update the registration code in <strong>index.html</strong> with:
 
 #### index.html
- <code>`</code> if (!('serviceWorker' in navigator)) {
+
+```
+if (!('serviceWorker' in navigator)) {
   console.log('Service worker not supported');
   return;
 }
@@ -295,7 +317,9 @@ navigator.serviceWorker.register('service-worker.js')
 })
 .catch(function(error) {
   console.log('Registration failed:', error);
-}); <code>`</code> 
+});
+```
+
 Refresh the browser. Notice that the console shows the scope of the service worker (for example <strong>http://localhost:8080/service-worker-lab/app/</strong>). 
 
 #### Explanation
@@ -333,9 +357,13 @@ Navigate to <strong>test-scoped.html</strong> again to confirm that the service 
 It is possible to set an arbitrary scope by passing in an additional parameter when registering, for example:
 
 #### index.html
- <code>`</code> navigator.serviceWorker.register('/service-worker.js', {
+
+```
+navigator.serviceWorker.register('/service-worker.js', {
   scope: '/kitten/'
-}); <code>`</code> 
+});
+```
+
 In the above example the scope of the service worker is set to <strong>/kitten/</strong>. The service worker intercepts requests from pages in <strong>/kitten/</strong> and <strong>/kitten/lower/</strong> but not from pages like <strong>/kitten</strong> or <strong>/</strong>. 
 
 <div class="note">

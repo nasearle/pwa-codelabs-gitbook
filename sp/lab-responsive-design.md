@@ -97,7 +97,11 @@ Open developer tools and <a href="tools_for_pwa_developers.md#mobile">enable res
 Replace TODO 3 in <strong>index.html</strong> with the following tag: 
 
 #### index.html
- <code>`</code> <meta name="viewport" content="width=device-width, initial-scale=1"> <code>`</code> 
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
 Save the file. Refresh the page in the browser and <a href="tools_for_pwa_developers.md#mobile">check the page in device mode</a>. Notice the page is no longer zoomed out and the scale of the content matches the scale on a desktop device. If the content behaves unexpectedly in the device emulator, toggle in and out of device mode to reset it.
 
 <div class="note">
@@ -126,11 +130,15 @@ The initial-scale property controls the zoom level when the page is first loaded
 Replace TODO 4 in <strong>styles/main.css</strong> with the following code:
 
 #### main.css
- <code>`</code> @media screen and (max-width: 48rem) {
+
+```
+@media screen and (max-width: 48rem) {
   .container .col {
     width: 95%;
   }
-} <code>`</code> 
+}
+```
+
 Save the file. Disable device mode in the browser and refresh the page. Try shrinking the window width. Notice that the content switches to a single column layout at the specified width. Re-enable device mode and observe that the content responds to fit the device width.
 
 #### Explanation
@@ -156,7 +164,9 @@ Comment out all of the rules in <strong>styles/main.css</strong> by wrapping the
 Replace TODO 5.2 in <strong>styles/main.css</strong> with the following code:
 
 #### main.css
- <code>`</code> .container {
+
+```
+.container {
   display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
@@ -167,7 +177,9 @@ Replace TODO 5.2 in <strong>styles/main.css</strong> with the following code:
 .container .col {
   flex: 1;
   padding: 1rem;
-} <code>`</code> 
+}
+```
+
 Save the code and refresh <strong>index.html</strong> in your browser. Disable device mode in the browser and refresh the page. If you make your browser window narrower, the columns grow thinner until only one of them remains visible. We'll fix this with media queries in the next exercise.
 
 #### Explanation
@@ -186,20 +198,28 @@ The second rule uses the <code>.col</code> class to create our equal width flex 
 ### 5.3 Optional: Set different relative widths
 
 Use the  [nth-child pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child) to set the relative widths of the first two columns to 1 and the third to 1.5. You must use the <code>flex</code> property to set the relative widths for each column. For example, the selector for the first column would look like this:
- <code>`</code> .container .col:nth-child(1) <code>`</code> 
+
+```
+.container .col:nth-child(1)
+```
+
 ### 5.4 Use media queries with Flexbox
 
 Replace TODO 5.4 in <strong>styles/main.css</strong> with the code below:
 
 #### main.css
- <code>`</code> @media screen and (max-width: 48rem) {
+
+```
+@media screen and (max-width: 48rem) {
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     flex-flow: column;
   }
-} <code>`</code> 
+}
+```
+
 Save the code and refresh <strong>index.html</strong> in your browser. Now if you shrink the browser width, the content reorganizes into one column.
 
 #### Explanation
@@ -223,7 +243,11 @@ As Flexbox is a relatively new technology, we should include fallbacks in our CS
 Replace TODO 6.1 in <strong>index.html</strong> with the code to include the custom Modernizr build:
 
 #### index.html
- <code>`</code> <script src="modernizr-custom.js"></script> <code>`</code> 
+
+```
+<script src="modernizr-custom.js"></script>
+```
+
 #### Explanation
 
 We include a  [Modernizr build](https://modernizr.com/download) at the top of <strong>index.html</strong>, which tests for Flexbox support. This runs the test on page-load and appends the class <code>flexbox</code> to the <code><html></code> element if the browser supports Flexbox. Otherwise, it appends a <code>no-flexbox</code> class to the <code><html></code> element. In the next section we add these classes to the CSS.
@@ -239,7 +263,9 @@ Let's use the <code>flexbox</code> and <code>no-flexbox</code> classes in the CS
 Now in <strong>styles/main.css</strong>, add <code>.no-flexbox</code> in front of each rule that we commented out:
 
 #### main.css
- <code>`</code> .no-flexbox .container {
+
+```
+.no-flexbox .container {
   background: #eee;
   overflow: auto;
 }
@@ -254,11 +280,15 @@ Now in <strong>styles/main.css</strong>, add <code>.no-flexbox</code> in front o
   .no-flexbox .container .col {
     width: 95%;
   }
-} <code>`</code> 
+}
+```
+
 In the same file, add <code>.flexbox</code> in front of the rest of the rules:
 
 #### main.css
- <code>`</code> .flexbox .container {
+
+```
+.flexbox .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,7 +308,9 @@ In the same file, add <code>.flexbox</code> in front of the rest of the rules:
         display: flex;
         flex-flow: column;
     }
-} <code>`</code> 
+}
+```
+
 Remember to add <code>.flexbox</code> to the rules for the individual columns if you completed the optional step 5.3.
 
 Save the code and refresh <strong>index.html</strong> in the browser. The page should look the same as before, but now it works well in any browser on any device. If you have a  [browser that doesn't support Flexbox](http://caniuse.com/#search=flexbox), you can test the fallback rules by opening <strong>index.html</strong> in that browser.

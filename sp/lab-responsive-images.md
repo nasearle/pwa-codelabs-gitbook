@@ -86,9 +86,13 @@ Before making the images responsive, let's make sure they won't overflow the scr
 Replace TODO 2 in <strong>styles/main.css</strong> with the following code:
 
 #### main.css
- <code>`</code> img {
+
+```
+img {
   max-width: 100%;
-} <code>`</code> 
+}
+```
+
 Save the code and refresh the page in your browser. Try resizing the window. The image widths should stay entirely within the window.
 
 #### Explanation
@@ -114,7 +118,11 @@ The goal is to get the browser to fetch the version of the image with the smalle
 To complete TODO 3.1 in <strong>index.html</strong>, add the following <code>srcset</code> attribute to the <code>&lt;img&gt;</code> element containing the SFO image:
 
 #### index.html
- <code>`</code> srcset="images/sfo-1600_large.jpg, images/sfo-1000_large.jpg, images/sfo-800_medium.jpg, images/sfo-500_small.jpg" <code>`</code> 
+
+```
+srcset="images/sfo-1600_large.jpg, images/sfo-1000_large.jpg, images/sfo-800_medium.jpg, images/sfo-500_small.jpg"
+```
+
 Save the code and refresh the page in the browser. Open your browser's Developer Tools and [look at the network requests](tools_for_pwa_developers.md#viewnetwork). Try refreshing the page at different window sizes. You should see that the browser is fetching <strong>images/sfo-1600_large.jpg</strong> no matter the window size.
 
 #### Explanation
@@ -128,7 +136,11 @@ To load the correct image size based on the viewport width we need to tell the b
 To complete TODO 3.2 in <strong>index.html</strong>, add width descriptors to the SFO <code>&lt;img&gt;</code> element:
 
 #### index.html
- <code>`</code> srcset="images/sfo-1600_large.jpg 1600w, images/sfo-1000_large.jpg 1000w, images/sfo-800_medium.jpg 800w, images/sfo-500_small.jpg 500w" <code>`</code> 
+
+```
+srcset="images/sfo-1600_large.jpg 1600w, images/sfo-1000_large.jpg 1000w, images/sfo-800_medium.jpg 800w, images/sfo-500_small.jpg 500w"
+```
+
 Save the code and refresh the page in the browser. Refresh the page at various window sizes and [check the network requests](tools_for_pwa_developers.md#viewnetwork) to see which version of the image is fetched at each size. On a 1x display, the browser fetches <strong>sfo-500_small.jpg</strong> when the window is narrower than 500px, <strong>sfo-800_medium.jpg</strong> when it is narrower than 800px, and so forth.
 
 <div class="note">
@@ -162,10 +174,14 @@ By adding a width descriptor to each file in the `srcset`, we are telling the br
 Replace TODO 4.1 in <strong>styles/main.css</strong> with the following code:
 
 #### styles/main.css
- <code>`</code> img#sfo {
+
+```
+img#sfo {
   transition: width 0.5s;
   max-width: 50vw;
-} <code>`</code> 
+}
+```
+
 Save the code and refresh the page in the browser. Try refreshing the page at various window sizes and [check the network requests](tools_for_pwa_developers.md#viewnetwork) at each size. The browser is fetching the same sized images as before.
 
 #### Explanation
@@ -179,7 +195,11 @@ We can give <code>&lt;img&gt;</code> a <code>sizes</code> attribute to tell the 
 To complete TODO 4.2 in <strong>index.html</strong> add <code>sizes="50vw"</code> to the <code>img</code> element so that it looks like this:
 
 #### index.html
- <code>`</code> <img id="sfo" src="images/sfo-500_small.jpg" srcset="images/sfo-1600_large.jpg 1600w, images/sfo-1000_large.jpg 1000w, images/sfo-800_medium.jpg 800w, images/sfo-500_small.jpg 500w" sizes="50vw" alt="View from aircraft window near San Francisco airport"> <code>`</code> 
+
+```
+<img id="sfo" src="images/sfo-500_small.jpg" srcset="images/sfo-1600_large.jpg 1600w, images/sfo-1000_large.jpg 1000w, images/sfo-800_medium.jpg 800w, images/sfo-500_small.jpg 500w" sizes="50vw" alt="View from aircraft window near San Francisco airport">
+```
+
 Save the code and refresh the page in the browser. Refresh the page at various window sizes and [check the network requests](tools_for_pwa_developers.md#viewnetwork) each time. You should see that for the same approximate window sizes you used to test the previous step, the browser is fetching a smaller image.
 
 #### Explanation
@@ -205,12 +225,16 @@ We can use media queries to resize images in real time based on the viewport wid
 Replace TODO 5.1 in <strong>styles/main.css</strong> with the following code:
 
 #### styles/main.css
- <code>`</code> @media screen and (max-width: 700px) {
+
+```
+@media screen and (max-width: 700px) {
   img#sfo {
     max-width: 90vw;
     width: 90vw;
   }
-} <code>`</code> 
+}
+```
+
 Save the code and refresh the page in the browser. Shrink the window to less than 700px (in Chrome, the viewport dimensions are shown on the screen if <strong>DevTools</strong> is open). The image should resize to fill 90% of the window width.
 
 #### Explanation
@@ -228,7 +252,11 @@ We can tell the browser about the media query in the <code>sizes</code> attribut
 To complete TODO 5.2 in <strong>index.html</strong>, update the <code>sizes</code> attribute in the SFO image:
 
 #### index.html
- <code>`</code> sizes="(max-width: 700px) 90vw, 50vw" <code>`</code> 
+
+```
+sizes="(max-width: 700px) 90vw, 50vw"
+```
+
 Save the code and refresh the page in the browser. Resize the browser window so that it is 600px wide. On a 1x display, the browser should fetch <strong>sfo-800_medium.jpg</strong>. 
 
 <a id="6" />
@@ -244,7 +272,9 @@ We can use the <code>&lt;picture&gt;</code> element and the <code>&lt;source&gt;
 Replace TODO 6 in <strong>index.html</strong> with the following code:
 
 #### index.html
- <code>`</code> <figure>
+
+```
+<figure>
     <picture>
     <source media="(min-width: 750px)"
             srcset="images/horses-1600_large_2x.jpg 2x,
@@ -254,7 +284,9 @@ Replace TODO 6 in <strong>index.html</strong> with the following code:
     <img src="images/horses_small.jpg" alt="Horses in Hawaii">
     </picture>
     <figcaption>Horses in Hawaii</figcaption>
-</figure> <code>`</code> 
+</figure>
+```
+
 Save the code and refresh the page in the browser. Try resizing the browser window. You should see the image change at 750px and 500px.
 
 #### Explanation
