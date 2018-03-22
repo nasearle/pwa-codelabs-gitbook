@@ -1,5 +1,5 @@
 {
-    "plugins": ["styles-sass", "ga"],
+    "plugins": ["ga"],
     "pluginsConfig": {
         "ga": {
             "token": "UA-81734179-1"
@@ -10,7 +10,6 @@
         "ebook": "styles/style.css",
         "pdf": "styles/style.css",
         "mobi": "styles/style.css",
-        "epub": "styles/style.css",
-        "website": "./styles/website.scss"
+        "epub": "styles/style.css"
     }
 }
