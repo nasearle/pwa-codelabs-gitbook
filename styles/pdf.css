@@ -4,9 +4,3 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
 }
-
-.note {
-  padding: 20px;
-  margin: 20px 0;
-  background: rgba(48, 79, 254, 0.1);
-}
